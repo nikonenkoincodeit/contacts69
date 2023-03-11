@@ -1,18 +1,11 @@
 {
   "contacts": [
     {
-      "name": "Pavdasdasel",
+      "name": "Pavdasdasel ",
       "number": "+3805656545888",
       "email": "pavel@gmail.com",
       "createdAt": 1676193108450,
       "id": "EyqPlfj"
-    },
-    {
-      "name": "dmytro",
-      "number": "+434343434343",
-      "email": "vygovskiy201444@gmail.com",
-      "createdAt": 1676196910094,
-      "id": "CJsPFkE"
     }
   ]
 }
