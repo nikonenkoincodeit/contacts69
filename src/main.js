@@ -1,14 +1,14 @@
-import { formLnk, contactsContainerLnk } from "./refs";
-import { getData } from "./api";
-import { createCard } from "./markup";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./css/style.css";
+import { formLnk, contactsContainerLnk } from './refs';
+import { getData, postData } from './api';
+import { createCard } from './markup';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/style.css';
 
-formLnk.addEventListener("submit", onSubmit);
+formLnk.addEventListener('submit', onSubmit);
 
 init();
 
-function onSubmit(e) {
+async function onSubmit(e) {
   e.preventDefault();
   /*const {
     elements: { name, number, email },
@@ -17,9 +17,15 @@ function onSubmit(e) {
     let numberCurrent = number.value.trim();
     let emailCurrent = email.value.trim();
     console.log(nameCurrent, numberCurrent, emailCurrent);*/
-  const data = Object.fromEntries(new FormData(e.target));
-  console.log(data);
-  e.target.reset();
+  try {
+    const data = Object.fromEntries(new FormData(e.target));
+    data.createdAt = Date.now();
+    await postData(data);
+    init();
+    e.target.reset();
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 
 async function init() {
@@ -37,6 +43,6 @@ async function init() {
 }
 
 function addMarkup(markup) {
-  // contactsContainerLnk.insertAdjacentHTML('beforeend', markup)
-  contactsContainerLnk.innerHTML += markup;
+  //   contactsContainerLnk.insertAdjacentHTML('beforeend', markup);
+  contactsContainerLnk.innerHTML = markup;
 }
