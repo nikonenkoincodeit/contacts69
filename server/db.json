@@ -1,32 +1,6 @@
 {
   "contacts": [
     {
-      "name": "Pavdasdasel ",
-      "number": "+3805656545888",
-      "email": "pavel@gmail.com",
-      "createdAt": 1676193108450,
-      "id": "EyqPlfj"
-    },
-    {
-      "name": "Михайло",
-      "number": "34-35",
-      "email": "m.a.s@ukr.net",
-      "id": "vOgFRyT"
-    },
-    {
-      "name": "sdas",
-      "number": "56565-555",
-      "email": "asdas@sssss",
-      "id": "D16lr4O"
-    },
-    {
-      "name": "aaa",
-      "number": "11-11",
-      "email": "a@qqq",
-      "createdAt": 1678546527685,
-      "id": "78G-jm7"
-    },
-    {
       "name": "ccc",
       "number": "22-22",
       "email": "c@qqq",

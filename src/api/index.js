@@ -31,3 +31,16 @@ export async function postData(data) {
 }
 
 
+export async function deleteData(id) {
+  options.method = "DELETE";
+  const response = await fetch(BASE_URL+'/'+id, options);
+
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+
+  return response.json();
+  
+}
+
+
