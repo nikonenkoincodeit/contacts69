@@ -1,10 +1,27 @@
 import { formLnk, contactsContainerLnk } from './refs';
-import { getData, postData } from './api';
+import { getData, postData, deleteData } from './api';
 import { createCard } from './markup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/style.css';
 
 formLnk.addEventListener('submit', onSubmit);
+contactsContainerLnk.addEventListener('click', deleteContact);
+
+async function deleteContact(event) {
+  if (event.target.tagName !== 'BUTTON') {
+    return;
+  }
+  try {
+    const card = event.target.closest('.js-wrap-card');
+    const id = card.dataset.cardid;
+    await deleteData(id);
+    card.remove();
+  } catch (error) {
+    console.log(error.message)
+  }
+} 
+
+
 
 init();
 
